@@ -1,4 +1,4 @@
-# Tugas4--DNS
+# DNS dan SMTP
 
 # Apa Itu DNS?
 
@@ -131,3 +131,51 @@ Beberapa masalah umum yang terjadi pada DNS antara lain:
 
 DNS adalah komponen penting dalam infrastruktur internet. Dengan memahami cara kerjanya, Anda akan lebih memahami bagaimana internet berfungsi dan bagaimana data mengalir dari satu perangkat ke perangkat lainnya.
 
+
+# SMTP: Simple Mail Transfer Protocol
+
+SMTP (Simple Mail Transfer Protocol) adalah protokol standar yang digunakan untuk mengirimkan email dari satu server ke server lainnya. Secara sederhana, SMTP berfungsi seperti "kurir" yang mengantarkan pesan email dari pengirim ke penerima.
+
+## Cara Kerja SMTP
+
+### Komposisi Pesan Email
+Pengguna membuat pesan email yang berisi:
+- **Alamat email pengirim**
+- **Alamat email penerima**
+- **Subjek**
+- **Isi pesan**
+- **Lampiran** (jika ada)
+
+### Pengiriman ke Server SMTP
+Klien email (misalnya, Outlook, Gmail) akan mengirimkan pesan ke server SMTP yang dikelola oleh penyedia email (misalnya, Google, Yahoo).
+
+### Proses di Server SMTP
+1. **Penerimaan Pesan**: Server SMTP menerima pesan dan melakukan verifikasi awal terhadap alamat email pengirim dan penerima.
+2. **Pencarian Server Penerima**: Server SMTP mencari tahu server SMTP mana yang menangani alamat email penerima. Ini dilakukan dengan menggunakan DNS (Domain Name System).
+3. **Transfer Pesan**: Pesan email diteruskan ke server SMTP penerima.
+4. **Pengantaran ke Kotak Masuk**: Server SMTP penerima menyimpan pesan email di kotak masuk penerima.
+
+### Notifikasi Pengiriman
+Server SMTP pengirim mengirimkan notifikasi kepada pengirim mengenai status pengiriman pesan (berhasil atau gagal).
+
+## Diagram Alir Kerja SMTP
+![SMTP Workflow Diagram](https://www.afternerd.com/smtp-workflow)
+
+### Keterangan Diagram:
+- **MUA (Mail User Agent)**: Klien email yang digunakan pengguna (misalnya, Outlook, Gmail).
+- **MTA (Mail Transfer Agent)**: Server SMTP yang mengelola pengiriman email.
+- **DNS**: Domain Name System yang digunakan untuk mencari alamat IP server SMTP penerima.
+
+## Fungsi Utama SMTP
+- **Mentransfer Pesan Email**: SMTP bertanggung jawab atas pengiriman pesan email dari satu server ke server lainnya.
+- **Verifikasi Alamat Email**: SMTP memverifikasi apakah alamat email penerima valid atau tidak.
+- **Pengiriman Notifikasi**: SMTP mengirimkan notifikasi kepada pengirim mengenai status pengiriman pesan.
+
+## Kelebihan SMTP
+- **Standar Industri**: SMTP sudah menjadi protokol standar di seluruh dunia.
+- **Keamanan**: SMTP mendukung berbagai mekanisme keamanan seperti TLS/SSL untuk melindungi data yang dikirimkan.
+- **Fleksibilitas**: SMTP dapat digunakan untuk mengirimkan berbagai jenis lampiran.
+
+## Kekurangan SMTP
+- **Hanya untuk Pengiriman**: SMTP hanya digunakan untuk mengirimkan email, tidak untuk menerima email.
+- **Tidak Real-time**: Proses pengiriman email menggunakan SMTP tidak selalu real-time.
