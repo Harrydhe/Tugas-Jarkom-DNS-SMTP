@@ -157,3 +157,5 @@ Server SMTP pengirim mengirimkan notifikasi kepada pengirim mengenai status peng
 ## Kekurangan SMTP
 - **Hanya untuk Pengiriman**: SMTP hanya digunakan untuk mengirimkan email, tidak untuk menerima email.
 - **Tidak Real-time**: Proses pengiriman email menggunakan SMTP tidak selalu real-time.
+
+## Terimakasih
