@@ -35,7 +35,7 @@
 
 ## Diagram Alir Kerja DNS
 
-![DNS Workflow](https://blogs.manageengine.com/images/dns-workflow.png)
+![Cara kerja DNS](https://github.com/Harrydhe/Tugas4--DNS/blob/main/assets/DNS.png)
 
 ## Komponen Utama DNS
 
