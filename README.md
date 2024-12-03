@@ -10,28 +10,6 @@
 - **Efisiensi**: DNS membuat pencarian alamat IP menjadi lebih cepat.
 - **Fleksibilitas**: Perubahan alamat IP tidak langsung memengaruhi akses ke situs web.
 
-## Cara Kerja DNS
-
-1. **Pengguna Memasukkan Nama Domain:**
-   - Anda mengetikkan alamat situs web (misalnya, `www.example.com`) di browser Anda.
-
-2. **Permintaan ke DNS Resolver:**
-   - Browser Anda mengirimkan permintaan ke DNS resolver (biasanya disediakan oleh ISP Anda) untuk mengetahui alamat IP yang sesuai dengan nama domain tersebut.
-
-3. **Pencarian di Cache:**
-   - DNS resolver pertama-tama akan memeriksa cache-nya (tempat penyimpanan sementara). Jika alamat IP sudah ada di cache, maka DNS resolver akan langsung memberikan alamat IP tersebut kepada browser Anda.
-
-4. **Permintaan ke Root Server:**
-   - Jika alamat IP tidak ditemukan di cache, DNS resolver akan mengirimkan permintaan ke root server DNS. Root server adalah server tingkat atas yang mengetahui lokasi server DNS otoritatif untuk domain tingkat atas (TLD) seperti `.com`, `.net`, dan sebagainya.
-
-5. **Permintaan ke Server DNS Otoritatif:**
-   - Root server akan mengarahkan DNS resolver ke server DNS otoritatif untuk domain yang Anda cari. Server DNS otoritatif adalah server yang memiliki informasi lengkap tentang nama domain tersebut.
-
-6. **Mendapatkan Alamat IP:**
-   - Server DNS otoritatif akan memberikan alamat IP yang sesuai kepada DNS resolver.
-
-7. **Browser Mengakses Situs Web:**
-   - DNS resolver akan mengirimkan alamat IP tersebut ke browser Anda. Browser kemudian akan menghubungi server web di alamat IP tersebut untuk mengambil halaman web yang Anda minta.
 
 ## Diagram Alir Kerja DNS
 
