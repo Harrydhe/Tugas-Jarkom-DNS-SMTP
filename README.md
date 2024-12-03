@@ -44,12 +44,90 @@
 - **Server DNS Otoritatif**: Server yang memiliki informasi lengkap tentang nama domain.
 - **Cache**: Tempat penyimpanan sementara untuk menyimpan hasil pencarian DNS.
 
+
+**DNS (Domain Name System)** adalah sistem yang berfungsi untuk menerjemahkan nama domain yang mudah diingat (seperti `google.com`) menjadi alamat IP yang digunakan oleh komputer untuk berkomunikasi di internet.
+
+## 1. Hierarki DNS
+
+DNS memiliki struktur hierarkis yang mirip dengan sistem direktori pada komputer. Hierarki ini dimulai dari:
+
+- **Root Server**: Tingkat paling atas dalam hierarki DNS. Ada beberapa root server di seluruh dunia yang berfungsi sebagai titik awal untuk semua permintaan DNS.
+- **TLD Server (Top-Level Domain)**: Server yang menangani domain tingkat atas seperti `.com`, `.net`, `.org`, dan sebagainya.
+- **Authoritative Server**: Server yang memiliki informasi spesifik tentang sebuah domain. Biasanya dikelola oleh pemilik domain.
+- **Recursive Resolver**: Server yang melakukan pencarian DNS atas nama klien.
+
+## 2. Jenis-Jenis Record DNS
+
+Selain alamat IP (tipe A), DNS juga mendukung berbagai jenis record lainnya, seperti:
+
+- **AAAA**: Untuk alamat IPv6.
+- **CNAME**: Alias untuk nama domain lain.
+- **MX**: Untuk server mail exchange (server email).
+- **NS**: Untuk server name server (server DNS otoritatif).
+- **TXT**: Untuk menyimpan teks, sering digunakan untuk verifikasi domain.
+
+## 3. DNS Caching
+
+**DNS caching** adalah proses menyimpan hasil pencarian DNS secara sementara untuk mempercepat permintaan DNS di masa mendatang. Cache DNS dapat berada di berbagai tingkat, mulai dari browser, sistem operasi, hingga DNS resolver.
+
+## 4. DNS Over HTTPS (DoH)
+
+**DoH (DNS Over HTTPS)** adalah protokol yang mengenkripsi lalu lintas DNS melalui HTTPS, sehingga meningkatkan privasi pengguna. Dengan DoH, ISP tidak dapat melihat situs web yang Anda kunjungi.
+
+## 5. DNS Over TLS (DoT)
+
+**DoT (DNS Over TLS)** juga merupakan protokol yang mengenkripsi lalu lintas DNS, tetapi menggunakan TLS sebagai protokol transport.
+
+## 6. DNSSEC
+
+**DNSSEC (DNS Security Extensions)** adalah mekanisme keamanan yang dirancang untuk melindungi DNS dari pemalsuan. DNSSEC menggunakan tanda tangan digital untuk memverifikasi integritas data DNS.
+
+## 7. Masalah Umum pada DNS
+
+Beberapa masalah umum yang terjadi pada DNS antara lain:
+
+- **DNS Hijacking**: Serangan di mana peretas mengalihkan lalu lintas DNS ke server palsu.
+- **DNS Amplification**: Serangan DDoS yang memanfaatkan DNS untuk memperkuat serangan.
+- **DNS Cache Poisoning**: Serangan yang menyuntikkan data palsu ke dalam cache DNS.
+
+## Cara Kerja DNS Secara Lebih Detail
+
+### Proses Resolusi DNS
+
+1. **Pengguna Memasukkan Nama Domain**:
+   - Pengguna mengetikkan nama domain di browser.
+   
+2. **Permintaan ke DNS Resolver**:
+   - Browser mengirimkan permintaan ke DNS resolver yang terdekat.
+
+3. **Pencarian di Cache Lokal**:
+   - DNS resolver memeriksa cache lokalnya terlebih dahulu. Jika ditemukan, alamat IP langsung diberikan.
+
+4. **Permintaan ke Root Server**:
+   - Jika tidak ditemukan di cache lokal, permintaan diteruskan ke root server.
+
+5. **Permintaan ke TLD Server**:
+   - Root server mengarahkan permintaan ke TLD server yang sesuai.
+
+6. **Permintaan ke Authoritative Server**:
+   - TLD server mengarahkan permintaan ke authoritative server untuk domain tersebut.
+
+7. **Mendapatkan Alamat IP**:
+   - Authoritative server memberikan alamat IP kepada DNS resolver.
+
+8. **Kembali ke Browser**:
+   - DNS resolver mengembalikan alamat IP ke browser.
+
+9. **Koneksi ke Server Web**:
+   - Browser menggunakan alamat IP untuk terhubung ke server web.
+
+## Contoh Kasus Penggunaan DNS
+
+- **Akses ke Situs Web**: Setiap kali Anda mengunjungi situs web, DNS menerjemahkan nama domain menjadi alamat IP.
+- **Email**: DNS digunakan untuk menemukan server mail exchange (MX) untuk mengirim dan menerima email.
+- **Aplikasi Jaringan**: Banyak aplikasi jaringan menggunakan DNS untuk menemukan server yang diperlukan.
+
 ## Kesimpulan
 
-DNS adalah sistem yang sangat penting dalam dunia internet. Dengan DNS, kita dapat dengan mudah mengakses situs web tanpa perlu mengingat deretan angka yang rumit. Proses kerja DNS melibatkan beberapa tahap, mulai dari permintaan pengguna hingga browser menerima alamat IP yang benar.
+DNS adalah komponen penting dalam infrastruktur internet. Dengan memahami cara kerjanya, Anda akan lebih memahami bagaimana internet berfungsi dan bagaimana data mengalir dari satu perangkat ke perangkat lainnya.
 
-## Informasi Tambahan
-
-- **DNS Hierarchy**: DNS memiliki hierarki yang terdiri dari root server, TLD server, authoritative server, dan recursive resolver.
-- **DNS Caching**: Caching sangat penting untuk meningkatkan kinerja DNS. Dengan caching, hasil pencarian DNS dapat disimpan sementara sehingga permintaan berikutnya dapat dilayani lebih cepat.
-- **DNS Security**: DNS juga rentan terhadap serangan seperti DNS hijacking dan DNS amplification. Untuk meningkatkan keamanan, terdapat protokol DNSSEC.
